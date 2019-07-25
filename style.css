@@ -71,7 +71,7 @@ label:hover{
     border-left: 5px solid #13A6B6;
 }
 
-h1, h2, h3, p, form{
+h1, h2, h3, p, form, span{
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -227,6 +227,19 @@ h1, h2, h3, p, form{
 .navbar a.defactive{
     color: black;
     background-color: #FED300;
+}
+
+/* WIKI */
+
+.articleTit{
+    padding: 14px 16px;
+    text-transform: uppercase;
+    border-left: 5px solid #13A6B6;
+}
+
+.articleTit:hover{
+    background-color: lightgray;
+    color: black;
 }
 
 

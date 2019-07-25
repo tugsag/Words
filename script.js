@@ -182,13 +182,11 @@ function dictionary(word){
     request.open('GET', url, true);
     
     request.onload = function(){
-        var data = JSON.parse(this.response);
-        
         if(request.status >= 200 && request.status < 400){
+            var data = JSON.parse(this.response);
             document.getElementById('word').innerHTML = word;
         
             for(var key in data[0].meaning){
-                console.log(key, data[0].meaning[key][0].definition);
                 var parent = document.createElement('p');
                 var node = document.createTextNode(key + ' - ' + data[0].meaning[key][0].definition);
                 parent.appendChild(node);
@@ -198,7 +196,7 @@ function dictionary(word){
             }
         }
         else{
-            alert('Invalid selection!')
+            document.getElementById('word').innerHTML = 'Not found. Try again.';
         }
     }
         
@@ -219,14 +217,13 @@ function thesaurus(word){
     request.open('GET', url, true);
     
     request.onload = function(){
-        var data = JSON.parse(this.response);
         
         if(request.status >= 200 && request.status < 400){
+            var data = JSON.parse(this.response);
             document.getElementById('word').innerHTML = word;
             
             for(var key in data[0].meaning){
                 if(data[0].meaning[key][0].synonyms !== undefined){
-                    console.log(key, data[0].meaning[key][0].synonyms);
                     var para = document.createElement('p');
                     var node = document.createTextNode(key + ' - ' + data[0].meaning[key][0].synonyms);
                     para.appendChild(node);
@@ -240,7 +237,7 @@ function thesaurus(word){
             }
         }
         else{
-            alert('Invalid selection!');
+            $('#word').html('Not found. Please try again');
         }
     }
     
