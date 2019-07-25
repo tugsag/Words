@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Word Counter</title>
+    <link rel="stylesheet" type = "text/css" href="style.css">
+    </head>
+    
+    <body>
+        <div id="banner">
+        <h1 id="titleText">WORDS<br></h1>
+        
+        <div id='navi' class='navbar'>
+            <a class='defactive' id='textEntry' onclick="textArea()">Enter Text</a>
+            <a id='lookup'>Quick Lookup</a>
+            <a id='fileEntry'>File Entry</a>
+            <a id='utilityNav'>Utilities</a>
+            <a id='wordSearchNav'>Word Search</a>
+        </div>
+        
+        </div>
+        
+        
+        
+        
+        <section id=entryField>
+        <h3 id='textExplain'>Enter text here. Select text and press button to search on Google or Scholar.</h3>
+            <textarea id='string' spellcheck="true">Enter text here.</textarea>
+                
+        <button class="button" id="search">Search</button>
+        <button class="button" id="scholar">Scholar</button>
+        <button class='button' id='copy'>Copy to clipboard</button>
+        
+        <div id="output">
+        <h2 id="words"></h2>
+        <h2 id="chars"></h2>
+        </div>
+        </section>
+
+
+        
+        <section id='directStuff' style='display: none'>
+
+        <div id='directSearch'>
+        <h3 id='divider'>Enter word to look up definitions or synonyms directly, or to search on Wikipedia.</h3>
+        <form id='entryBox'>
+            Enter word: 
+            <input type='text' name='wordToLookUp' id='directWord'><br>
+            <button type='button' class='button' id='directDict'>Define</button>
+            <button type='button' class='button' id='directThes'>Synonyms</button>
+            <button type='button' class='button' id='directWiki'>Wikipedia</button>
+        </form>
+        </div>
+        
+        <h1 id='word'></h1>
+        <div id='definition' class='inlineBlock'>
+        </div>
+        
+        <div id='wikiDisp'>
+            <h1 id="wikititle"></h1>
+            <p id="wikicontent"></p>
+        </div> 
+        </section>
+            
+
+
+        <section id='fileStuff' style='display: none'>
+            
+        
+        <div id='fileInputArea'>
+        <h3 id='fileArea'>Upload a .txt file to count words and characters</h3>
+            <label for='file'>Choose file</label>
+            <input type='file' id='file'>
+        </div>  
+        
+        <div id='fileDisplayArea'>
+            <p id='fileDisplay'></p>
+            <h2 id='fileWords'></h2>
+            <h2 id='fileChars'></h2>
+            <h2 id='fileUniques'></h2>
+        </div>
+            
+        </section>
+        
+        
+        
+        <section id='utilities' style='display: none'>
+        <div id='randomNum'>
+            <h3 id='randomNumExp'>Enter a number to receive a random integer back</h3>
+            <form id=randomNumEntryField>
+                <input type='number' id='randomNumRange' min='0'><br>
+            </form>
+            <button class='button' id='randomNumButton'>Gen. number</button>
+            <h3 id='randomDisp'></h3>
+        </div>
+        <hr>
+        <div id='randomWord'>
+            <h3 id='randomWordExp'>Return one random word. Enter a number to return that many words</h3>
+            <form id='randomWordNumField'>
+                <input type='number' id='randomWordRange' min='1'><br>
+            </form>
+            <button class='button' id='randomWordButton'>Random word</button>
+            <h3 id='randomWordDisp'></h3>
+        </div>
+        </section>
+        
+        
+        <section id='wordSearch' style='display: none'>
+        <div>
+            <h3 id='wordStartExp'>Enter what the word should start or end with, or what phrase it should contain. Reenter phrase and press hone to further narrow results</h3>
+            <form id='wordContainEntryField'>
+                <input type='text' id='wordContain'><br>
+            </form>
+            <button class='button' id='wordStartButton'>Starts with</button>
+            <button class='button' id='wordEndButton'>Ends with</button>
+            <button class='button' id='wordIncludeButton'>Contains</button>
+
+            <button class='button' id='honeButton' style='display: none'>Hone Results</button>
+            <h3 id='honeReturn'></h3>
+            <h3 id='honeDisp'></h3>
+            <h3 id='wordReturn'></h3>
+            <h3 id='wordContainDisp'></h3>
+        </div>
+        </section>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        
+    </body>
+</html>
